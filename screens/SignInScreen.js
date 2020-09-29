@@ -24,7 +24,7 @@ import Users from '../model/users';
 
 const SignInScreen = ({navigation}) => {
 
-    {/* state required for functionality */}
+    {/* set states required for functionality */}
     const [data, setData] = React.useState({
         username: '',
         password: '',

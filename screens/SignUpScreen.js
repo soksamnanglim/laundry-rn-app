@@ -18,6 +18,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const SignInScreen = ({navigation}) => {
 
+    // set states
     const [data, setData] = React.useState({
         username: '',
         password: '',
@@ -74,14 +75,19 @@ const SignInScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
           <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+
+        {/* HEADER SECTION */}
         <View style={styles.header}>
             <Text style={styles.text_header}>Register Now!</Text>
         </View>
+
+        {/* FOOTER SECTION */}
         <Animatable.View 
             animation="fadeInUpBig"
             style={styles.footer}
         >
             <ScrollView>
+                {/* USERNAME */}
             <Text style={styles.text_footer}>Username</Text>
             <View style={styles.action}>
                 <FontAwesome 
@@ -108,6 +114,7 @@ const SignInScreen = ({navigation}) => {
                 : null}
             </View>
 
+                {/* PASSWORD */}
             <Text style={[styles.text_footer, {
                 marginTop: 35
             }]}>Password</Text>
@@ -177,6 +184,8 @@ const SignInScreen = ({navigation}) => {
                     }
                 </TouchableOpacity>
             </View>
+
+            {/* TERMS */}
             <View style={styles.textPrivate}>
                 <Text style={styles.color_textPrivate}>
                     By signing up you agree to our
@@ -185,6 +194,8 @@ const SignInScreen = ({navigation}) => {
                 <Text style={styles.color_textPrivate}>{" "}and</Text>
                 <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Privacy policy</Text>
             </View>
+
+            {/* BUTTON */}
             <View style={styles.button}>
                 <TouchableOpacity
                     style={styles.signIn}
@@ -221,6 +232,8 @@ const SignInScreen = ({navigation}) => {
 
 export default SignInScreen;
 
+
+// styling
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
