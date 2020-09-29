@@ -10,16 +10,17 @@ import {
     Alert
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import LinearGradient from 'react-native-linear-gradient';
-// icons
+//import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
+
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 
 import { useTheme } from 'react-native-paper';
 
-import { AuthContext } from '../components/context';
+//import { AuthContext } from '../components/context';
 
-import Users from '../model/users';
+//import Users from '../model/users';
 
 
 const SignInScreen = ({navigation}) => {
@@ -36,7 +37,7 @@ const SignInScreen = ({navigation}) => {
 
     const { colors } = useTheme();
 
-    const { signIn } = React.useContext(AuthContext);
+    //const { signIn } = React.useContext(AuthContext);
 
     const textInputChange = (val) => {
         if( val.trim().length >= 4 ) {
@@ -79,41 +80,41 @@ const SignInScreen = ({navigation}) => {
         });
     }
 
-    const handleValidUser = (val) => {
-        if( val.trim().length >= 4 ) {
-            setData({
-                ...data,
-                isValidUser: true
-            });
-        } else {
-            setData({
-                ...data,
-                isValidUser: false
-            });
-        }
-    }
+    // const handleValidUser = (val) => {
+    //     if( val.trim().length >= 4 ) {
+    //         setData({
+    //             ...data,
+    //             isValidUser: true
+    //         });
+    //     } else {
+    //         setData({
+    //             ...data,
+    //             isValidUser: false
+    //         });
+    //     }
+    // }
 
-    const loginHandle = (userName, password) => {
+    // const loginHandle = (userName, password) => {
 
-        const foundUser = Users.filter( item => {
-            return userName == item.username && password == item.password;
-        } );
+    //     const foundUser = Users.filter( item => {
+    //         return userName == item.username && password == item.password;
+    //     } );
 
-        if ( data.username.length == 0 || data.password.length == 0 ) {
-            Alert.alert('Wrong Input!', 'Username or password field cannot be empty.', [
-                {text: 'Okay'}
-            ]);
-            return;
-        }
+    //     if ( data.username.length == 0 || data.password.length == 0 ) {
+    //         Alert.alert('Wrong Input!', 'Username or password field cannot be empty.', [
+    //             {text: 'Okay'}
+    //         ]);
+    //         return;
+    //     }
 
-        if ( foundUser.length == 0 ) {
-            Alert.alert('Invalid User!', 'Username or password is incorrect.', [
-                {text: 'Okay'}
-            ]);
-            return;
-        }
-        signIn(foundUser);
-    }
+    //     if ( foundUser.length == 0 ) {
+    //         Alert.alert('Invalid User!', 'Username or password is incorrect.', [
+    //             {text: 'Okay'}
+    //         ]);
+    //         return;
+    //     }
+    //     signIn(foundUser);
+    // }
 
     return (
       <View style={styles.container}>
