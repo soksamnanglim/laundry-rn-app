@@ -204,7 +204,7 @@ const SignInScreen = ({navigation}) => {
                     onPress={() => {}}
                 >
                 <LinearGradient
-                    colors={['#08d4c4', '#01ab9d']}
+                    colors={['#C8DFED', '#A7BFCE']}
                     style={styles.signIn}
                 >
                     <Text style={[styles.textSign, {

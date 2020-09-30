@@ -18,11 +18,14 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import { AuthContext } from '../components/context';
 
 export function DrawerContent(props) {
 
     const [isDarkTheme, setIsDarkTheme] = React.useState(false);
 
+    const { signOut } = React.useContext(AuthContext);
+ 
     const toggleTheme = () => {
         setIsDarkTheme(!isDarkTheme);
     }

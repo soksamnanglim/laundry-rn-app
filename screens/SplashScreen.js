@@ -53,7 +53,7 @@ const SplashScreen = ({navigation}) => {
                 {/* navigate to our sign-in screen when pressed */}
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}> 
                 <LinearGradient
-                    colors={['#08d4c4', '#01ab9d']}
+                    colors={['#C8DFED', '#A7BFCE']}
                     style={styles.signIn}
                 >
                     <Text style={styles.textSign}>Get Started</Text>
@@ -83,7 +83,7 @@ const image = { uri: "https://i.pinimg.com/originals/f0/c6/ca/f0c6cac86c1f1b870b
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#B4D0E2'
+    //backgroundColor: '#B4D0E2'
   },
   image: {
     flex: 1,

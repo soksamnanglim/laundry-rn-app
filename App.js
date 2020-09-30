@@ -34,7 +34,7 @@ export default function App() {
       setUserToken('abc');
       setIsLoading(false);
     },
-  }));
+  }), []);
 
   // when screen is rendering check if logged in
   useEffect(() => {
