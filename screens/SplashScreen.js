@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
       height: 40,
       justifyContent: 'center',
       alignItems: 'center',
-      borderRadius: 50,
+      borderRadius: 10,
       flexDirection: 'row'
   },
   textSign: {

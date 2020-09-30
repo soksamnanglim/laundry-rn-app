@@ -18,7 +18,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import { useTheme } from 'react-native-paper';
 
-//import { AuthContext } from '../components/context';
+import { AuthContext } from '../components/context';
 
 //import Users from '../model/users';
 
@@ -37,7 +37,7 @@ const SignInScreen = ({navigation}) => {
 
     const { colors } = useTheme();
 
-    //const { signIn } = React.useContext(AuthContext);
+    const { signIn } = React.useContext(AuthContext);
 
     const textInputChange = (val) => {
         if( val.trim().length >= 4 ) {
@@ -153,7 +153,7 @@ const SignInScreen = ({navigation}) => {
                     }]}
                     autoCapitalize="none"
                     onChangeText={(val) => textInputChange(val)}
-                    onEndEditing={(e)=>handleValidUser(e.nativeEvent.text)}
+                    //onEndEditing={(e)=>handleValidUser(e.nativeEvent.text)}
                 />
                 {/* green check when field isn't empty */}
                 {data.check_textInputChange ? 
@@ -231,7 +231,8 @@ const SignInScreen = ({navigation}) => {
                 {/* sign in button */}
                 <TouchableOpacity
                     style={styles.signIn}
-                    onPress={() => {loginHandle( data.username, data.password )}}
+                    onPress={() => {signIn()}}
+                    //onPress={() => {loginHandle( data.username, data.password )}}
                 >
                 <LinearGradient
                     colors={['#08d4c4', '#01ab9d']}
