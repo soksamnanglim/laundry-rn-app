@@ -20,7 +20,7 @@ const SplashScreen = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-          <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+          <StatusBar backgroundColor='#B4D0E2' barStyle="light-content"/>
           <ImageBackground source={image} style={styles.image}>
             {/* <Text style={styles.text}>Inside</Text> */}
           </ImageBackground>
@@ -83,7 +83,7 @@ const image = { uri: "https://i.pinimg.com/originals/f0/c6/ca/f0c6cac86c1f1b870b
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#009387'
+    backgroundColor: '#B4D0E2'
   },
   image: {
     flex: 1,

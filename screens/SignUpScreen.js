@@ -216,13 +216,13 @@ const SignInScreen = ({navigation}) => {
                 <TouchableOpacity
                     onPress={() => navigation.goBack()}
                     style={[styles.signIn, {
-                        borderColor: '#009387',
+                        borderColor: '#A7BFCE',
                         borderWidth: 1,
                         marginTop: 15
                     }]}
                 >
                     <Text style={[styles.textSign, {
-                        color: '#009387'
+                        color: '#A7BFCE'
                     }]}>Sign In</Text>
                 </TouchableOpacity>
             </View>
@@ -239,7 +239,7 @@ export default SignInScreen;
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#009387'
+      backgroundColor: '#A7BFCE'
     },
     header: {
         flex: 1,
