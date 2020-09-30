@@ -6,7 +6,8 @@ import {
     Dimensions,
     StyleSheet,
     StatusBar,
-    Image
+    Image,
+    ImageBackground
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 // import LinearGradient from 'react-native-linear-gradient';
@@ -20,16 +21,19 @@ const SplashScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
           <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+          <ImageBackground source={image} style={styles.image}>
+            {/* <Text style={styles.text}>Inside</Text> */}
+          </ImageBackground>
         
         {/* HEADER PART */}
         <View style={styles.header}>
-            <Animatable.Image 
+            {/* <Animatable.Image 
                 animation="bounceIn"
                 duraton="1500"
             source={require('../assets/logo.png')}
             style={styles.logo}
             resizeMode="stretch"
-            />
+            /> */}
         </View>
 
         {/* FOOTER PART */}
@@ -72,22 +76,30 @@ export default SplashScreen;
 const {height} = Dimensions.get("screen");
 const height_logo = height * 0.28;
 
+// bubbles
+const image = { uri: "https://i.pinimg.com/originals/f0/c6/ca/f0c6cac86c1f1b870b390dc4eb4a06a5.gif" };
+
 // styling
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
     backgroundColor: '#009387'
   },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
   header: {
-      flex: 2,
+      flex: 0,
       justifyContent: 'center',
       alignItems: 'center'
   },
   footer: {
       flex: 1,
       backgroundColor: '#fff',
-      borderTopLeftRadius: 30,
-      borderTopRightRadius: 30,
+      borderTopLeftRadius: 0,
+      borderTopRightRadius: 0,
       paddingVertical: 50,
       paddingHorizontal: 30
   },
