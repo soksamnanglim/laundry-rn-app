@@ -50,6 +50,15 @@ export default function App() {
     }, 1000);
   }, []);
 
+  // handle fonts
+  let [fontsLoaded] = useFonts({
+    Quicksand_300Light, 
+    Quicksand_400Regular, 
+    Quicksand_500Medium, 
+    Quicksand_600SemiBold, 
+    Quicksand_700Bold
+  });
+
   // if loading
   if( isLoading ) {
     return(
@@ -59,18 +68,10 @@ export default function App() {
     );
   }
 
-    // HANDLE FONTS
-  // let [fontsLoaded, error] = useFonts({
-  //   Quicksand_300Light, 
-  //   Quicksand_400Regular, 
-  //   Quicksand_500Medium, 
-  //   Quicksand_600SemiBold, 
-  //   Quicksand_700Bold
-  // });
-
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // };
+  // handle fonts
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
 
   return (
     <AuthContext.Provider value={authContext}>
