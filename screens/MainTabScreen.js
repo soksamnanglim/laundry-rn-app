@@ -76,7 +76,7 @@ const HomeStackScreen = ({navigation}) => (
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
-        fontWeight: 'bold'
+        fontFamily: 'Quicksand_700Bold'
       }
     }}>
       <HomeStack.Screen name="Home" component={HomeScreen}
@@ -98,7 +98,7 @@ const HomeStackScreen = ({navigation}) => (
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
-        fontWeight: 'bold'
+        fontFamily: 'Quicksand_700Bold'
       }
     }}>
       <DetailsStack.Screen name="Details" component={DetailsScreen} 

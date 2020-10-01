@@ -14,10 +14,11 @@ import { AuthContext } from './components/context';
 
 import RootStackScreen from './screens/RootStackScreen';
 
+
 const Drawer = createDrawerNavigator();
 
-
 export default function App() {
+  
   const [isLoading, setIsLoading] = React.useState(true);
   const [userToken, setUserToken] = React.useState(null); 
 

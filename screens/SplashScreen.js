@@ -15,7 +15,27 @@ import { LinearGradient } from 'expo-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useTheme } from '@react-navigation/native';
 
+import { AppLoading } from 'expo';
+import {
+  useFonts,
+  Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold
+} from '@expo-google-fonts/quicksand';
+
 const SplashScreen = ({navigation}) => {
+
+    // HANDLE FONTS
+    let [fontsLoaded, error] = useFonts({
+        Quicksand_300Light, 
+        Quicksand_400Regular, 
+        Quicksand_500Medium, 
+        Quicksand_600SemiBold, 
+        Quicksand_700Bold
+      });
+    
+      if (!fontsLoaded) {
+        return <AppLoading />;
+      }
+
     const { colors } = useTheme();
 
     return (
@@ -45,15 +65,15 @@ const SplashScreen = ({navigation}) => {
         >
             <Text style={[styles.title, {
                 color: colors.text
-            }]}>Stay connected with everyone!</Text>
-            <Text style={styles.text}>Sign in with account</Text>
+            }]}>LaundryNow</Text>
+            <Text style={styles.text}>Sign in with account.</Text>
 
             {/* sign-in button */}
             <View style={styles.button}>
                 {/* navigate to our sign-in screen when pressed */}
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}> 
                 <LinearGradient
-                    colors={['#C8DFED', '#A7BFCE']}
+                    colors={['#B3DCDE', '#B3DCDE']}
                     style={styles.signIn}
                 >
                     <Text style={styles.textSign}>Get Started</Text>
@@ -88,7 +108,8 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     resizeMode: "cover",
-    justifyContent: "center"
+    justifyContent: "center",
+    opacity: 0.5
   },
   header: {
       flex: 0,
@@ -110,11 +131,13 @@ const styles = StyleSheet.create({
   title: {
       color: '#05375a',
       fontSize: 30,
-      fontWeight: 'bold'
+      //fontWeight: 'bold',
+      fontFamily: 'Quicksand_700Bold'
   },
   text: {
       color: 'grey',
-      marginTop:5
+      marginTop:5,
+      fontFamily: 'Quicksand_400Regular'
   },
   button: {
       alignItems: 'flex-end',
@@ -130,6 +153,7 @@ const styles = StyleSheet.create({
   },
   textSign: {
       color: 'white',
-      fontWeight: 'bold'
+      //fontWeight: 'bold',
+      fontFamily: 'Quicksand_700Bold'
   }
 });

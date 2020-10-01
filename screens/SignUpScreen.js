@@ -192,9 +192,9 @@ const SignInScreen = ({navigation}) => {
                 <Text style={styles.color_textPrivate}>
                     By signing up you agree to our
                 </Text>
-                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Terms of service</Text>
+                <Text style={[styles.color_textPrivate, {fontFamily: 'Quicksand_700Bold'}]}>{" "}Terms of service</Text>
                 <Text style={styles.color_textPrivate}>{" "}and</Text>
-                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Privacy policy</Text>
+                <Text style={[styles.color_textPrivate, {fontFamily: 'Quicksand_700Bold'}]}>{" "}Privacy policy</Text>
             </View>
 
             {/* BUTTON */}
@@ -257,11 +257,12 @@ const styles = StyleSheet.create({
     },
     text_header: {
         color: '#fff',
-        fontWeight: 'bold',
+        fontFamily: 'Quicksand_700Bold',
         fontSize: 30
     },
     text_footer: {
         color: '#05375a',
+        fontFamily: 'Quicksand_500Medium',
         fontSize: 18
     },
     action: {
@@ -276,6 +277,7 @@ const styles = StyleSheet.create({
         marginTop: Platform.OS === 'ios' ? 0 : -12,
         paddingLeft: 10,
         color: '#05375a',
+        fontFamily: 'Quicksand_500Medium'
     },
     button: {
         alignItems: 'center',
@@ -290,7 +292,7 @@ const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontFamily: 'Quicksand_700Bold'
     },
     textPrivate: {
         flexDirection: 'row',
@@ -298,6 +300,7 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     color_textPrivate: {
+        fontFamily: 'Quicksand_500Medium',
         color: 'grey'
     }
   });

@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 16,
       marginTop: 3,
-      fontWeight: 'bold',
+      fontFamily: 'Quicksand_700Bold'
     },
     caption: {
       fontSize: 14,

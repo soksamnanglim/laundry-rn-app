@@ -22,6 +22,11 @@ import { AuthContext } from '../components/context';
 
 //import Users from '../model/users';
 
+// import { AppLoading } from 'expo';
+// import {
+//   useFonts,
+//   Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold
+// } from '@expo-google-fonts/quicksand';
 
 const SignInScreen = ({navigation}) => {
 
@@ -225,7 +230,7 @@ const SignInScreen = ({navigation}) => {
             
             {/* BUTTONS */}
             <TouchableOpacity>
-                <Text style={{color: '#A7BFCE', marginTop:15}}>Forgot password?</Text>
+                <Text style={{fontFamily: 'Quicksand_500Medium',color: '#A7BFCE', marginTop:15}}>Forgot password?</Text>
             </TouchableOpacity>
             <View style={styles.button}>
                 {/* sign in button */}
@@ -235,7 +240,7 @@ const SignInScreen = ({navigation}) => {
                     //onPress={() => {loginHandle( data.username, data.password )}}
                 >
                 <LinearGradient
-                    colors={['#C8DFED', '#A7BFCE']}
+                    colors={['#A7BFCE', '#A7BFCE']}
                     style={styles.signIn}
                 >
                     <Text style={[styles.textSign, {
@@ -281,18 +286,19 @@ const styles = StyleSheet.create({
     footer: {
         flex: 3,
         backgroundColor: '#fff',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
         paddingHorizontal: 20,
         paddingVertical: 30
     },
     text_header: {
         color: '#fff',
-        fontWeight: 'bold',
+        fontFamily: 'Quicksand_700Bold',
         fontSize: 30
     },
     text_footer: {
         color: '#05375a',
+        fontFamily: 'Quicksand_500Medium',
         fontSize: 18
     },
     action: {
@@ -313,11 +319,13 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: Platform.OS === 'ios' ? 0 : -12,
         paddingLeft: 10,
+        fontFamily: 'Quicksand_500Medium',
         color: '#05375a',
     },
     errorMsg: {
         color: '#FF0000',
-        fontSize: 14,
+        fontFamily: 'Quicksand_500Medium',
+        fontSize: 14
     },
     button: {
         alignItems: 'center',
@@ -332,6 +340,6 @@ const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontFamily: 'Quicksand_700Bold'
     }
   });
