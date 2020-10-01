@@ -14,6 +14,12 @@ import { AuthContext } from './components/context';
 
 import RootStackScreen from './screens/RootStackScreen';
 
+import { AppLoading } from 'expo';
+import {
+  useFonts,
+  Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold
+} from '@expo-google-fonts/quicksand';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -52,6 +58,19 @@ export default function App() {
       </View>
     );
   }
+
+    // HANDLE FONTS
+  // let [fontsLoaded, error] = useFonts({
+  //   Quicksand_300Light, 
+  //   Quicksand_400Regular, 
+  //   Quicksand_500Medium, 
+  //   Quicksand_600SemiBold, 
+  //   Quicksand_700Bold
+  // });
+
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // };
 
   return (
     <AuthContext.Provider value={authContext}>

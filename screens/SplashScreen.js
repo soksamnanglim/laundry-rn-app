@@ -21,27 +21,15 @@ import {
   Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold
 } from '@expo-google-fonts/quicksand';
 
-const SplashScreen = ({navigation}) => {
 
-    // HANDLE FONTS
-    let [fontsLoaded, error] = useFonts({
-        Quicksand_300Light, 
-        Quicksand_400Regular, 
-        Quicksand_500Medium, 
-        Quicksand_600SemiBold, 
-        Quicksand_700Bold
-      });
-    
-      if (!fontsLoaded) {
-        return <AppLoading />;
-      }
+const SplashScreen = ({navigation}) => {
 
     const { colors } = useTheme();
 
     return (
       <View style={styles.container}>
           <StatusBar backgroundColor='#B4D0E2' barStyle="light-content"/>
-          <ImageBackground source={image} style={styles.image}>
+          <ImageBackground source={require('../assets/bubblestransp.gif')} style={styles.image}>
             {/* <Text style={styles.text}>Inside</Text> */}
           </ImageBackground>
         
@@ -66,14 +54,15 @@ const SplashScreen = ({navigation}) => {
             <Text style={[styles.title, {
                 color: colors.text
             }]}>LaundryNow</Text>
-            <Text style={styles.text}>Sign in with account.</Text>
+            <Text style={styles.text}>Laundry made more convenient.</Text>
+            <Text style={styles.text}>Sign in to start.</Text>
 
             {/* sign-in button */}
             <View style={styles.button}>
                 {/* navigate to our sign-in screen when pressed */}
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}> 
                 <LinearGradient
-                    colors={['#B3DCDE', '#B3DCDE']}
+                    colors={['#B4D0E2', '#B4D0E2']}
                     style={styles.signIn}
                 >
                     <Text style={styles.textSign}>Get Started</Text>
@@ -88,6 +77,7 @@ const SplashScreen = ({navigation}) => {
         </Animatable.View>
       </View>
     );
+        
 };
 
 export default SplashScreen;
@@ -103,10 +93,10 @@ const image = { uri: "https://i.pinimg.com/originals/f0/c6/ca/f0c6cac86c1f1b870b
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    //backgroundColor: '#B4D0E2'
+    backgroundColor: '#D9E8F2'
   },
   image: {
-    flex: 1,
+    flex: 2,
     resizeMode: "cover",
     justifyContent: "center",
     opacity: 0.5
@@ -119,8 +109,8 @@ const styles = StyleSheet.create({
   footer: {
       flex: 1,
       backgroundColor: '#fff',
-      borderTopLeftRadius: 0,
-      borderTopRightRadius: 0,
+      borderTopLeftRadius: 10,
+      borderTopRightRadius: 10,
       paddingVertical: 50,
       paddingHorizontal: 30
   },
@@ -130,7 +120,7 @@ const styles = StyleSheet.create({
   },
   title: {
       color: '#05375a',
-      fontSize: 30,
+      fontSize: 35,
       //fontWeight: 'bold',
       fontFamily: 'Quicksand_700Bold'
   },
